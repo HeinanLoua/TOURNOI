@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournoi PVP Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <style></style>
+</head>
+<body>
+    <header>
+        <nav class="navbar container">
+            <div class="logo">⚔️ Tournoi PVP Manager</div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Player Management Section -->
+        <section class="player-management fade-in">
+            <h2>Gestion des Joueurs</h2>
+            <form class="player-form" id="playerForm">
+                <div class="input-group">
+                    <input type="text" id="playerName" placeholder="Pseudo du joueur" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="playerBounty" placeholder="Bounty (optionnel)">
+                </div>
+                <button type="submit">Ajouter</button>
+            </form>
+
+            <table class="players-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Pseudo</th>
+                        <th>Bounty</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="playersList"></tbody>
+            </table>
+
+            <button id="generateGroups" disabled>Générer les Poules</button>
+        </section>
+
+        <!-- Groups Section -->
+        <section class="groups-container" id="groupsContainer"></section>
+
+        <!-- Tournament Bracket -->
+        <section class="bracket-container fade-in" id="bracketContainer" style="display: none;">
+            <h2>Phase Finale</h2>
+            <div class="bracket">
+                <div class="bracket-round">
+                    <h3>Quarts de Finale</h3>
+                    <div id="quarterFinals"></div>
+                </div>
+                <div class="bracket-round">
+                    <h3>Demi-Finales</h3>
+                    <div id="semiFinals"></div>
+                </div>
+                <div class="bracket-round">
+                    <h3>Finale</h3>
+                    <div id="final"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d5a9e;
+            --accent: #64b5f6;
+            --background: #f0f4f8;
+            --text: #2d3748;
+            --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #48bb78;
+            --error: #f56565;
+        }
+
+        [data-theme="dark"] {
+            --primary: #1a1f2c;
+            --secondary: #2d3748;
+            --accent: #4299e1;
+            --background: #171923;
+            --text: #e2e8f0;
+            --card-bg: #2d3748;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--primary);
+            padding: 1rem;
+            box-shadow: 0 4px 6px var(--shadow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+        }
+
+        /* Player Management Section */
+        .player-management {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 
+                8px 8px 15px var(--shadow),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .player-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--text);
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--accent);
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Players Table */
+        .players-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        .players-table th,
+        .players-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--shadow);
+        }
+
+        /* Groups Section */
+        .groups-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .group-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 
+                8px 8px 15px var(--shadow),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .group-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .group-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        /* Bracket Section */
+        .bracket-container {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .bracket {
+            display: flex;
+            justify-content: space-between;
+            min-width: 900px;
+        }
+
+        .bracket-round {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .bracket-match {
+            background: var(--secondary);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .player-form {
+                grid-template-columns: 1fr;
+            }
+
+            .groups-container {
+                grid-template-columns: 1fr;
+            }
+
+            .bracket-container {
+                padding: 1rem;
+            }
+        }
+
+        /* Snow Animation */
+        .snowflake {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            color: #fff;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    
